@@ -1,0 +1,154 @@
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+}
+
+.giftTicket {
+    position: relative;
+    width: min(380px, calc(100vw - 48px));
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 54px 42px 36px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 10, 0, 0.12);
+    background:
+        radial-gradient(circle at 0 50%, transparent 11px, var(--white) 12px),
+        var(--white);
+    background-position: -12px 0;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    transform: rotate(-6deg);
+}
+
+.giftTicket::before,
+.giftTicket::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    border-right: 2px dashed rgba(125, 10, 0, 0.12);
+}
+
+.giftTicket::before {
+    left: 10px;
+}
+
+.giftTicket::after {
+    right: 10px;
+    transform: scaleX(-1);
+}
+
+.modalClose {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(125, 10, 0, 0.14);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--darkgreen);
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modalClose:hover {
+    background: #f2ede6;
+}
+
+.newBadge {
+    position: absolute;
+    top: 22px;
+    left: 42px;
+    z-index: 2;
+    margin: 0;
+    color: var(--darkgreen);
+    font-family: "Homemade Apple", cursive;
+    font-size: 19px;
+    transform: rotate(-7deg);
+}
+
+.ticketContent {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.giftImage {
+    width: 170px;
+    height: 170px;
+    margin: 8px 0 18px;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 8px 22px rgba(8, 28, 6, 0.12);
+}
+
+.giftName {
+    max-width: 280px;
+    margin: 0;
+    color: var(--red);
+    font-family: "Inter", sans-serif;
+    font-size: 34px;
+    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.giftDescription {
+    max-width: 280px;
+    margin: 16px 0 0;
+    color: var(--darkgreen);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.openGift {
+    min-width: 142px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 26px;
+    border-radius: 28px;
+    background: var(--green);
+    color: var(--white);
+    font-family: "Homemade Apple", cursive;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.openGift span {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+}
+
+@media (max-width: 430px) {
+    .giftTicket {
+        min-height: 480px;
+        padding: 50px 34px 30px;
+    }
+
+    .giftName {
+        font-size: 29px;
+    }
+}

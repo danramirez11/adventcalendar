@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inter:wght@500;700;800&display=swap");
+
+:root{
+    --white: #fffbf7;
+    --red: #a10b0b;
+    --darkred: #7d0a00;
+    --beige: #bda186;
+    --green: #1a3b16;
+    --darkgreen: #081c06;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    min-width: 320px;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--beige);
+    color: var(--darkgreen);
+    font-family: "Inter", sans-serif;
+}
+

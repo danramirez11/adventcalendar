@@ -1,0 +1,194 @@
+.wholepage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: #c8a98f;
+    background-image:
+        linear-gradient(rgba(255, 251, 247, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 251, 247, 0.18) 1px, transparent 1px),
+        linear-gradient(rgba(125, 10, 0, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 10, 0, 0.08) 1px, transparent 1px);
+    background-size: 34px 34px, 34px 34px, 17px 17px, 17px 17px;
+}
+
+.loadingScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    background-color: #c8a98f;
+    background-image:
+        linear-gradient(rgba(255, 251, 247, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 251, 247, 0.18) 1px, transparent 1px),
+        linear-gradient(rgba(125, 10, 0, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 10, 0, 0.08) 1px, transparent 1px);
+    background-size: 34px 34px, 34px 34px, 17px 17px, 17px 17px;
+    opacity: 1;
+    transition: opacity 500ms ease;
+}
+
+.loadingScreen--fading {
+    opacity: 0;
+}
+
+.loadingScreen p {
+    margin: 0;
+    color: var(--darkgreen);
+    font-family: "Homemade Apple", cursive;
+    font-size: 25px;
+    transform: rotate(-2deg);
+}
+
+.titleDiv {
+    position: relative;
+    width: 100%;
+    height: 226px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 36px;
+}
+
+.titleDiv h1,
+.titleDiv h2 {
+    margin: 0;
+}
+
+.titleDiv h1 {
+    color: var(--red);
+    font-family: "Inter", sans-serif;
+    font-size: 50px;
+    line-height: 0.78;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.titleDiv h2 {
+    position: absolute;
+    bottom: 18px;
+    color: var(--green);
+    font-family: "Homemade Apple", cursive;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    transform: rotate(-2deg);
+}
+
+.calendarFrame {
+    width: 390px;
+    max-width: calc(100vw - 40px);
+    height: 510px;
+    padding: 20px 24px 19px;
+    border: 1px solid rgba(125, 10, 0, 0.2);
+    border-radius: 22px;
+    background: var(--white);
+    box-shadow: 0 10px 28px rgba(125, 10, 0, 0.12);
+}
+
+.calendarGrid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.dayColumn {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.dayCard {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border: 5px solid rgba(255, 251, 247, 0.35);
+    border-radius: 7px;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 251, 247, 0.35),
+        0 2px 0 rgba(8, 28, 6, 0.12);
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dayCard:hover {
+    transform: translateY(-2px);
+}
+
+.dayCard span {
+    font-variant-numeric: tabular-nums;
+}
+
+.dayCard--green {
+    background: #6a9d45;
+    border-color: #86b65d;
+}
+
+.dayCard--red {
+    background: var(--red);
+    border-color: #c44a3f;
+}
+
+.dayCard--darkgreen {
+    background: var(--green);
+    border-color: #33582c;
+}
+
+.dayCard:disabled{
+    background: gray;
+    border-color: lightgrey;
+}
+
+.calendarFooter {
+    margin-top: auto;
+    height: 129px;
+    display: flex;
+    align-items: center;
+    color: var(--darkgreen);
+    font-family: "Homemade Apple", cursive;
+    font-size: 25px;
+    transform: rotate(-2deg);
+}
+
+@media (max-width: 430px), (max-height: 780px) {
+    .titleDiv {
+        height: 180px;
+        padding-bottom: 26px;
+    }
+
+    .titleDiv h1 {
+        font-size: 42px;
+    }
+
+    .titleDiv h2 {
+        top: 112px;
+        font-size: 30px;
+    }
+
+    .calendarFrame {
+        height: 460px;
+        padding: 16px 18px;
+    }
+
+    .dayCard {
+        font-size: 26px;
+        transform: scaleY(0.9);
+    }
+
+    .dayCard:hover {
+        transform: scaleY(0.9) translateY(-2px);
+    }
+
+    .calendarFooter {
+        height: 98px;
+    }
+}
