@@ -1,0 +1,23 @@
+.wholepage.unblock{
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarFrame.unblock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    padding-block: 48px;
+}
+
+.openGift.unblock{
+    border: none;
+}
+
+.unblockText{
+    color: var(--darkred);
+    font-size: 2rem;
+    text-align: center;
+}
