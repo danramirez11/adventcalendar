@@ -58,7 +58,7 @@ export const Modal = ({ gift, handleClose }: ModalProps) => {
                 {hasUrl && (
                     <a
                         className="openGift"
-                        href={gift.url}
+                        href={gift.url || undefined}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
